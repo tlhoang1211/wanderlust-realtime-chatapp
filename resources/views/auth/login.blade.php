@@ -1,5 +1,37 @@
 @extends('layouts.app')
 @section('login_css')
+    <style type="text/css">
+        .login-btn {
+            background-color: deeppink;
+            box-shadow: 0 9px brown;
+            font-weight: 600;
+        }
+
+        .login-btn:active {
+            background-color: #3e3c3c;
+            color: deeppink;
+            transform: translateY(4px);
+        }
+
+        .fg-pwd-btn {
+            color: deeppink;
+            text-decoration: none;
+            background-color: #3e3c3c;
+            box-shadow: 0 9px #292525;
+            font-weight: 600;
+        }
+
+        .fg-pwd-btn:hover,
+        .fg-pwd-btn:focus {
+            color: deeppink;
+        }
+
+        .fg-pwd-btn:active {
+            background-color: deeppink;
+            color: #292525;
+            transform: translateY(4px);
+        }
+    </style>
 @endsection
 @section('content')
     <div class="container">
