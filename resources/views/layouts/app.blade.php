@@ -39,7 +39,10 @@
 
     <link rel="stylesheet" href="{{ asset('/css/custom.css') }}" crossorigin="anonymous">
 
-
+    @yield('login_css')
+    @yield('register_css')
+    @yield('email_css')
+    @yield('reset_css')
 </head>
 <body>
 <div id="app">
