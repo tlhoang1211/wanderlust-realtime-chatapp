@@ -88,7 +88,74 @@ export default {
         }
     },
     computed: {
+        highlight() {
+            if (this.message.receiver) { // ignore if this is private message
+                return this.message.content
+            }
+            const content = sanitizeHtml(this.message.content)
+            return content.replace(new RegExp('chuc mung|congratulations|congrats|happy new year', 'gi'), match => {
+                return '<span class="highlightText">' + match + '</span>'
+            })
+        }
     }
 }
 </script>
 
+<style lang="scss">
+.msg_container_send {
+    background-color: rgb(255, 240, 31);
+    color: black;
+}
+
+.bot-notification {
+    max-width: 100% !important;
+    width: 100%;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+.msg-item {
+    &.private {
+        .msg-actions {
+            i {
+                &:hover {
+                    color: #054760 !important;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .msg-actions {
+            opacity: 1;
+        }
+    }
+
+    .msg-actions {
+        opacity: 0;
+        transition: opacity .2s;
+
+        i {
+            color: lightgray;
+            cursor: pointer;
+            transition: color .2s;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+.highlightText {
+    color: crimson;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.bg-gray {
+    background-color: black;
+    color: white;
+}
+</style>
