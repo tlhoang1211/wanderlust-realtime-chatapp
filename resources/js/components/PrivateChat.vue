@@ -72,6 +72,13 @@
           @input="onInputPrivateChange"
       >
     </div>
+    <Emoji
+        :emojiCoordinates="emojiCoordinates"
+        :isShow="isShowEmoji"
+        :selectedMessage="selectedMessage"
+        @hideEmoji="hideEmoji"
+        @selectEmoji="selectEmoji"
+    />
 
     <transition name="fade">
       <ColorPickerModal
