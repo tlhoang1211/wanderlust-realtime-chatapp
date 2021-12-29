@@ -121,6 +121,17 @@
         @yield('content')
     </main>
 
+    <!-- Footer -->
+    <footer class="text-center text-white footer-position">
+        <!-- Copyright -->
+        <div class="text-center p-2 text-copyright">
+            Background gif from <a href="https://radio.x-team.com/"><strong style="color: aqua">X-TEAM</strong></a> / ©
+            2021 Copyright:
+            <a href="https://www.instagram.com/ver.nom/"><span style="text-decoration: underline">VER.NOM</span></a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 </div>
 
 
