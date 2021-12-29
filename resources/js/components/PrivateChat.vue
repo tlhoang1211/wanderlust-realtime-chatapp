@@ -177,3 +177,39 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.private-message-container {
+  z-index: 1;
+}
+
+.color-picker {
+  position: absolute;
+  right: 45px;
+  top: 17px;
+
+  i {
+    font-size: 22px;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+  opacity: 0;
+}
+
+.private-message-container .chat-header {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.private-message-container .chat-header:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.private-message-container .private-chat-body {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+</style>
