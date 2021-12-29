@@ -44,6 +44,79 @@
 <body>
 <div id="app">
 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                <img
+                    src="https://res.cloudinary.com/vernom/image/upload/v1639377635/realtime_chat_app/page_bg/output-onlinegiftools_dyrqhz.gif"
+                    alt="logo">
+                <h2 class="ml-2 mb-0" style="font-weight: 400; color: deeppink">WANDERLUST</h2>
+            </a>
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav mr-auto">
+
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link cyber-btn login-cyber-btn"
+                               href="{{ route('login') }}">{{ __('Login') }}<span aria-hidden="true">_</span>
+                                <span aria-hidden="true" class="cyber-btn__glitch login-cyber-btn__glitch">Login_</span>
+                                <span aria-hidden="true" class="cyber-btn__tag">V11</span>
+                            </a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link cyber-btn register-cyber-btn"
+                                   href="{{ route('register') }}">{{ __('Register') }}<span
+                                        aria-hidden="true">_</span>
+                                    <span aria-hidden="true" class="cyber-btn__glitch register-cyber-btn__glitch">Register_</span>
+                                    <span aria-hidden="true" class="cyber-btn__tag">V11</span>
+                                </a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
+                               style="color: aqua">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"
+                                 style="background-color: rgba(255,255,255,0.2)">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                                   style="color: deeppink">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
     <main class="py-4" style="">
         @yield('content')
     </main>
