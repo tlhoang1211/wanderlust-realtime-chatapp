@@ -19,7 +19,15 @@ export default {
             transitionName: 'fade'
         }
     },
-
+    watch: {
+        '$route.name': function (newValue, oldValue) {
+            if (newValue === 'room') {
+                this.transitionName = 'slide-left'
+            } else {
+                this.transitionName = 'slide-right'
+            }
+        }
+    }
 }
 </script>
 
