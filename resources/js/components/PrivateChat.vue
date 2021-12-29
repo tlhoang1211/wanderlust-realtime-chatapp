@@ -19,6 +19,17 @@
         <span>{{ chat.selectedReceiver.name }}</span>
         <!-- <p style="color: black;" class="mb-0">{{ chat.selectedReceiver.name }} left 50 mins ago</p> -->
       </div>
+      <div class="color-picker">
+        <i
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Message Color"
+            class="fas fa-circle"
+            @click.stop="toggleColorPicker"
+            style="cursor: pointer;"
+            :style="{'color': msgColor}"
+        ></i>
+      </div>
       <button class="btn-close" @click="$emit('closePrivateChat')">
         <i class="fal fa-times" style="color: white"></i>
       </button>
