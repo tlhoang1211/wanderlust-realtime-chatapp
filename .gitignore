@@ -29,3 +29,4 @@ laravel-echo-server.lock
 horizon.log
 laravel-echo-server.json
 logs
+/.idea/
