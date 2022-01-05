@@ -1,5 +1,5 @@
 # Set master image
-FROM php:7.2-fpm-alpine
+FROM php:7.4-fpm-alpine
 
 LABEL maintainer="VERNOM"
 
