@@ -41,7 +41,7 @@ Clone this project.
 Run the following commands:
 ```
 composer install
-npm install
+npm install --legacy-peer-deps
 cp .env.example .env
 php artisan key:generate
 npm install -g laravel-echo-server
@@ -64,6 +64,7 @@ After that change `MIX_FRONTEND_PORT` in `.env` to 6001
 ## Run the app
 To run the app, run the following commands, each command in **a separate terminal**:
 ```
+redis-server
 php artisan serve
 npm run watch
 laravel-echo-server start
@@ -108,9 +109,9 @@ LARAVEL_ECHO_SERVER_DEBUG=false
 
 Next, Run the following commands:
 ```
-docker run --rm -v $(pwd):/app -w /app composer install --ignore-platform-reqs --no-autoloader --no-dev --no-interaction --no-progress --no-suggest --no-scripts --prefer-dist
+docker run --rm -v $(pwd):/app -w /app composer install --ignore-platform-reqs --no-autoloader --no-dev --no-interaction --no-progress --no-scripts --prefer-dist
 docker run --rm -v $(pwd):/app -w /app composer dump-autoload --classmap-authoritative --no-dev --optimize
-docker run --rm -v $(pwd):/app -w /app node npm install --production
+docker run --rm -v $(pwd):/app -w /app node npm install --legacy-peer-deps --production
 docker run --rm -v $(pwd):/app -w /app node npm run prod
 ```
 The commands above are equivalent with: 
